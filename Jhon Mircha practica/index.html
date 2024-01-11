@@ -18,17 +18,25 @@
        console.info(`la cadena ${cadena} tiene ${cadena.length} caracteres.` );
      }
    }
-   contarCaracteres('hola mundo');
+   //contarCaracteres('hola mundo');
   // -----------"funcion expresada"----------- 
   const contarCaracteres2 = (cadena ="") => 
   (!cadena) ? console.warn("No ingresaste ninguna cadena")
   : console.info(`la cadena ${cadena} tiene ${cadena.length} caracteres.` );
   
-  contarCaracteres('hola mundo'); 
+  //contarCaracteres('hola mundo'); 
 /*
   2) Programa una función que te devuelva el texto recortado según el número de 
   caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".*/
 
+   const recortarTexto = (cadena ="", longitud = undefined) => 
+   (!cadena)
+   ? console.warn("No ingresaste una cadena de texto")
+   :(longitud === undefined)
+   ? console.warn("No ingresaste una lingitud para recortar ")
+   : console.info(cadena.slice(0,longitud));
+
+   recortarTexto('hola mundo', 4);
 
  
  
