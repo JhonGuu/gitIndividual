@@ -36,17 +36,54 @@
    ? console.warn("No ingresaste una lingitud para recortar ")
    : console.info(cadena.slice(0,longitud));
 
-   recortarTexto('hola mundo', 4);
+   //recortarTexto('hola mundo', 4);
 
  
  
   /*  
 3) Programa una función que dada una String te devuelva un Array de textos 
 separados por cierto caracter, pe. miFuncion('hola que tal', ' ') 
-devolverá ['hola', 'que', 'tal'].
-4) Programa una función que repita un texto X veces, 
+devolverá ['hola', 'que', 'tal'].*/
+const cadenaArreglo = (cadena ='' , separador = undefined) => (!cadena)
+  ? console.warn('no ingresaste una cadena de texto')
+  : (separador === undefined)
+  ? console.warn('no ingresaste un separador')
+  : console.info(cadena.split(separador));
+
+//cadenaArreglo('hola mundo este es la prueba de mi ejercicio 3 ' , "*");
+//cadenaArreglo('hola mundo');
+
+/*4) Programa una función que repita un texto X veces, 
 pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
  */
+const repetirCadena = (cadena= '', veces= undefined) => {
+if(!cadena) return console.warn('no ingresaste una cadena');
+
+if(veces === undefined) return console.warn('no ingresaste la cantidad de veces a repetir');
+
+if(veces === 0) return console.error('la cantidad de veces a repetir no puede ser 0 ');
+if(Math.sign(veces) === -1) return console.error('la cantidad de veces no puede ser negativa ');
+
+for(let i = 1; i<= veces;i++) console.log(`${cadena}, ${i}`);
+
+}
+
+
+repetirCadena('hola mundo aca estamos repitiendo', 5);
+repetirCadena('',0);
+repetirCadena('hola mundo',-5);
+
+/*
+5) Programa una función que invierta las palabras de una cadena de texto, 
+pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+6) Programa una función para contar el número de veces que se repite una palabra en un texto largo,
+ pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+7) Programa una función que valide si una palabra o frase dada, es un palíndromo 
+(que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+8) Programa una función que elimine cierto patrón de caracteres de un texto dado, 
+pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+*/
   </script>
 </body>
 </html>
